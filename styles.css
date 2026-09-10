@@ -989,4 +989,46 @@ tr:last-child td {
   }
 }
 
+/* ==========================================
+   ESTILOS PARA IMÁGENES WEBP EN CAPTURAS DE RED
+   ========================================== */
+
+/* Ajuste del contenedor de la imagen */
+.red-section-block .placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  min-height: auto; /* Reemplaza el alto mínimo por defecto */
+  box-shadow: 0 4px 14px rgba(22, 77, 58, 0.06);
+  overflow: hidden;
+}
+
+/* Estilo y responsividad de las imágenes webp */
+.red-section-block .placeholder img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid var(--borde);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover interactivo al pasar el cursor */
+.red-section-block .placeholder img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 16px rgba(22, 77, 58, 0.12);
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+  .red-section-block .placeholder {
+    padding: 10px;
+  }
+}
+
 /* fin codigo nuevo mas codigo nuevo */ 
