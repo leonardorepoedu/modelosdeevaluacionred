@@ -928,4 +928,65 @@ tr:last-child td {
   }
 }
 
+/* ==========================================
+   AJUSTE DE TABLA DE VERIFICACIÓN (SIN SCROLL EN PC)
+   ========================================== */
+
+/* En pantallas de PC y escritorio se adapta al 100% sin scroll */
+.red-section-block .data-table-wrap {
+  overflow-x: visible;
+  box-shadow: none;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+}
+
+.red-section-block .evaluation-table {
+  width: 100%;
+  min-width: 0; /* Elimina la restricción de ancho fijo en PC */
+  table-layout: fixed; /* Fuerza el ajuste proporcional de columnas */
+}
+
+/* Distribución optimizada de las columnas en PC */
+.red-section-block .evaluation-table th:nth-child(1),
+.red-section-block .evaluation-table td:nth-child(1) {
+  width: 25%;
+}
+
+.red-section-block .evaluation-table th:nth-child(2),
+.red-section-block .evaluation-table td:nth-child(2) {
+  width: 25%;
+}
+
+.red-section-block .evaluation-table th:nth-child(3),
+.red-section-block .evaluation-table td:nth-child(3) {
+  width: 50%;
+}
+
+.red-section-block .evaluation-table td {
+  word-wrap: break-word; /* Evita que textos largos rompan el layout */
+  hyphens: auto;
+}
+
+/* En dispositivos móviles y tablets se habilita el scroll suave para mantener legibilidad */
+@media (max-width: 850px) {
+  .red-section-block .data-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .red-section-block .evaluation-table {
+    min-width: 650px; /* Ancho mínimo óptimo para pantallas pequeñas */
+    table-layout: auto;
+  }
+
+  .red-section-block .evaluation-table th:nth-child(1),
+  .red-section-block .evaluation-table td:nth-child(1),
+  .red-section-block .evaluation-table th:nth-child(2),
+  .red-section-block .evaluation-table td:nth-child(2),
+  .red-section-block .evaluation-table th:nth-child(3),
+  .red-section-block .evaluation-table td:nth-child(3) {
+    width: auto;
+  }
+}
+
 /* fin codigo nuevo mas codigo nuevo */ 
