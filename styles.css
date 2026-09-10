@@ -1032,3 +1032,68 @@ tr:last-child td {
 }
 
 /* fin codigo nuevo mas codigo nuevo */ 
+
+/* ==========================================
+   BOTÓN PRINCIPAL RESPONSIVO
+   ========================================== */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--verde);
+  color: var(--blanco);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(36, 115, 79, 0.2);
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  
+  /* Ajustes para responsividad por defecto (PC) */
+  max-width: 100%;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Efectos en escritorio (Hover & Focus) */
+.btn-primary:hover {
+  background-color: var(--verde-oscuro);
+  border-color: var(--dorado);
+  color: var(--blanco);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(22, 77, 58, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(22, 77, 58, 0.2);
+}
+
+.btn-primary:focus-visible {
+  outline: 3px solid var(--dorado);
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   ADAPTACIÓN PARA CELULARES Y TABLETS
+   ========================================== */
+
+@media (max-width: 768px) {
+  .btn-primary {
+    display: flex; /* Ocupa el ancho completo del contenedor si es necesario */
+    width: 100%;
+    padding: 14px 20px; /* Incrementa el área táctil para el toque con el dedo */
+    font-size: 1.05rem; /* Ajuste óptimo de legibilidad en pantallas pequeñas */
+    white-space: normal; /* Permite salto de línea si el texto es muy largo */
+    text-align: center;
+  }
+}
+
+
+/*  codigo nuevo mas codigo nuevo */ 
