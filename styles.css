@@ -655,3 +655,107 @@ tr:last-child td {
 .data-table-wrap::-webkit-scrollbar-thumb:hover {
   background: var(--verde-oscuro);
 }
+
+/* ==========================================
+   DISEÑO EN TARJETAS PARA MODELOS DE EVALUACIÓN
+   ========================================== */
+
+.models-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-top: 25px;
+}
+
+.model-detail-card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.model-title-badge {
+  background: var(--verde-oscuro);
+  color: var(--blanco);
+  padding: 22px 28px;
+  border-bottom: 4px solid var(--dorado);
+}
+
+.model-title-badge h2 {
+  color: var(--blanco);
+  margin-bottom: 6px;
+  font-size: 1.8rem;
+}
+
+.model-subtitle {
+  display: block;
+  font-size: 0.95rem;
+  color: #e2ede7;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.model-content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  padding: 28px;
+}
+
+.model-block {
+  background: var(--verde-suave);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.model-block h3 {
+  color: var(--verde);
+  font-size: 1.25rem;
+  border-bottom: 2px solid var(--verde-claro);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.model-block p {
+  color: var(--texto);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  line-height: 1.55;
+}
+
+.model-block p:last-child {
+  margin-bottom: 0;
+}
+
+.model-block.full-width {
+  grid-column: 1 / -1;
+}
+
+.highlight-block {
+  background: var(--verde-claro);
+  border-left: 5px solid var(--verde);
+}
+
+.highlight-block h3 {
+  color: var(--verde-oscuro);
+  border-bottom-color: var(--borde);
+}
+
+/* Responsivo para móviles y tabletas */
+@media (max-width: 850px) {
+  .model-content-grid {
+    grid-template-columns: 1fr;
+    padding: 18px;
+    gap: 16px;
+  }
+
+  .model-title-badge {
+    padding: 18px 20px;
+  }
+
+  .model-title-badge h2 {
+    font-size: 1.5rem;
+  }
+}
