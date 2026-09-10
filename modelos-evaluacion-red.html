@@ -1,3 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página principal de modelos de evaluación y Recursos Educativos Digitales.">
+  <title>Modelos de evaluación y RED | UDES</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <a href="index.html" aria-label="Inicio">
+        <img src="assets/logo-udes.png" alt="Universidad de Santander UDES">
+      </a>
+      <div class="brand-text">
+        <strong>Sitio académico informativo</strong>
+        <span>Evaluación y rediseño de Recursos Educativos Digitales</span>
+      </div>
+    </div>
+
+    <button class="menu-icon" type="button" aria-expanded="false" aria-controls="main-nav">
+      Menú ☰
+    </button>
+
+    <nav class="nav" id="main-nav" aria-label="Navegación principal">
+      <a class="" href="index.html">Inicio</a>
+
+      <div class="dropdown">
+        <button class="dropdown-toggle active" type="button"
+                aria-expanded="false" aria-haspopup="true"
+                title="Abrir Modelos de evaluación y RED">
+          Modelos de evaluación y RED ▾
+        </button>
+        <div class="dropdown-menu">
+          <a class="" href="seleccionando-modelos.html">Seleccionando modelos</a>
+          <a class="" href="recursos-educativos-digitales.html">Recursos educativos digitales</a>
+        </div>
+      </div>
+
+      <a class="" href="rediseno.html">Rediseño</a>
+      <a class="" href="aplicacion-modelo.html">Aplicación de modelo de evaluación</a>
+      <a class="" href="referencias.html">Referencias</a>
+    </nav>
+  </div>
+</header>
+
+
 <main>
 
 <section class="page-title">
@@ -14,193 +63,56 @@
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <h2>Modelos de Evaluación de RED</h2>
+      <h2>Contenido</h2>
       <p>
-        Cuadro comparativo detallado de los modelos de evaluación analizados, especificando sus componentes, características, ventajas, desventajas y métricas de evaluación.
+        Desde esta sección se puede acceder a los dos apartados que conforman
+        el análisis de los modelos y los recursos educativos digitales.
       </p>
     </div>
 
-    <!-- Contenedor responsive con scroll horizontal -->
-    <div class="table-responsive-wrapper">
-      <table class="styled-table">
-        <thead>
-          <tr>
-            <th>Modelo de Evaluación</th>
-            <th>Componentes / Metodología</th>
-            <th>Características</th>
-            <th>Ventajas</th>
-            <th>Desventajas</th>
-            <th>Métrica de Evaluación</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- FILA 1: UNE 71362 -->
-          <tr>
-            <td class="model-name">
-              <strong>Norma UNE 71362</strong>
-              <span>Calidad de los Materiales Educativos Digitales</span>
-            </td>
-            <td>
-              <p><strong>Eficacia didáctica:</strong> Descripción didáctica, calidad de contenidos, capacidad de generar aprendizaje, adaptabilidad, interactividad, motivación.</p>
-              <p><strong>Eficacia tecnológica:</strong> Formato y diseño, reusabilidad, portabilidad, robustez y estabilidad técnica.</p>
-              <p><strong>Accesibilidad:</strong> Estructura del escenario de aprendizaje, navegación, operabilidad, accesibilidad del contenido audiovisual y textual.</p>
-            </td>
-            <td>
-              Marco amplio diseñado para valorar la calidad de los materiales educativos digitales. Sirve como guía desde la creación hasta la selección de contenidos, integrando aspectos pedagógicos, tecnológicos y de accesibilidad para garantizar un aprendizaje equitativo e inclusivo.
-            </td>
-            <td>
-              Evaluación muy completa e integral. Incorpora la accesibilidad como criterio clave para abrir las puertas a una diversidad real de estudiantes.
-            </td>
-            <td>
-              Proceso más amplio y exigente que en otros modelos por la cantidad de criterios. Requiere conocimientos técnicos específicos para revisar aspectos de accesibilidad y estabilidad.
-            </td>
-            <td>
-              Rúbrica compuesta por <strong>15 criterios e indicadores de calidad</strong> para análisis cuantitativo y cualitativo.
-            </td>
-          </tr>
+    <div class="cards">
+      <article class="card">
+        <h3>Seleccionando modelos</h3>
+        <p>
+          [Ingrese aquí una introducción sobre la selección de los modelos
+          de evaluación, sus características y criterios de elección.]
+        </p>
+        <a class="btn" href="seleccionando-modelos.html">Ver contenido</a>
+      </article>
 
-          <!-- FILA 2: BOEHM -->
-          <tr>
-            <td class="model-name">
-              <strong>BOEHM</strong>
-              <span>Barry W. Boehm (1978)</span>
-            </td>
-            <td>
-              <ul>
-                <li><strong>Utilidad:</strong> Confiabilidad, eficiencia, usabilidad, comprensibilidad.</li>
-                <li><strong>Mantenibilidad:</strong> Facilidad de prueba, flexibilidad.</li>
-                <li><strong>Portabilidad:</strong> Adaptabilidad de entorno.</li>
-              </ul>
-            </td>
-            <td>
-              Evalúa la calidad del software a través de criterios de alto, medio y bajo nivel: confiabilidad, eficiencia, usabilidad, comprensibilidad, mantenibilidad, flexibilidad, portabilidad y facilidad de prueba.
-            </td>
-            <td>
-              Aplicable a Recursos Educativos Digitales. Evalúa la facilidad de uso, la calidad del software e identifica elementos específicos a mejorar.
-            </td>
-            <td>
-              Requiere tiempo para su evaluación. Puede dificultarse para personas sin conocimiento previo del modelo y ser subjetivo según el evaluador. No fue diseñado exclusivamente para educación.
-            </td>
-            <td>
-              <p><strong>Escala de valoración:</strong></p>
-              <ul>
-                <li><strong>3:</strong> Excelente</li>
-                <li><strong>2:</strong> Bueno</li>
-                <li><strong>1:</strong> Deficiente</li>
-              </ul>
-            </td>
-          </tr>
-
-          <!-- FILA 3: FURPS -->
-          <tr>
-            <td class="model-name">
-              <strong>FURPS</strong>
-              <span>Hewlett Packard (1987)</span>
-            </td>
-            <td>
-              <ul>
-                <li><strong>F:</strong> Funcionalidad</li>
-                <li><strong>U:</strong> Usabilidad</li>
-                <li><strong>R:</strong> Confiabilidad (Reliability)</li>
-                <li><strong>P:</strong> Rendimiento (Performance)</li>
-                <li><strong>S:</strong> Soportabilidad (Supportability)</li>
-              </ul>
-            </td>
-            <td>
-              Sistema para medir la calidad del software evaluando cumplimiento de función, seguridad, facilidad de comprensión, tiempo de respuesta, tolerancia a fallas y facilidad de instalación o actualización.
-            </td>
-            <td>
-              Fácil de aplicar y comprender. Identifica fallas para mejorar, se adapta a distintos RED y facilita la comparación directa entre recursos.
-            </td>
-            <td>
-              Subjetivo dependiendo de quien evalúa. Dificultad si no hay conocimiento de criterios. Se limita en aspectos pedagógicos y es rígido en su enfoque técnico.
-            </td>
-            <td>
-              Evalúa sus 5 categorías principales con un <strong>Puntaje máximo global de 25 puntos</strong>.
-            </td>
-          </tr>
-
-          <!-- FILA 4: COdA -->
-          <tr>
-            <td class="model-name">
-              <strong>COdA</strong>
-              <span>Calidad de los Objetos de Aprendizaje</span>
-            </td>
-            <td>
-              <p><strong>Componente didáctico (1-5):</strong> Objetivos, calidad de contenidos, capacidad de reflexión, interactividad, motivación.</p>
-              <p><strong>Componente tecnológico (6-10):</strong> Formato, usabilidad, accesibilidad, reusabilidad, interoperabilidad.</p>
-            </td>
-            <td>
-              Evalúa la calidad de un Objeto de Aprendizaje combinando su utilidad educativa y características tecnológicas. Puede aplicarse en la creación, previa a la clase o tras la implementación.
-            </td>
-            <td>
-              Herramienta sencilla de aplicar. Integra aspectos pedagógicos y técnicos, ofreciendo orientación clara con subcriterios concretos antes de llevar el recurso al aula.
-            </td>
-            <td>
-              Revisar todos los subcriterios requiere tiempo. Los resultados pueden variar según la interpretación del evaluador. No contempla completamente el contexto educativo global.
-            </td>
-            <td>
-              Escala de <strong>1 a 5</strong> para cada uno de los 10 criterios (Puntuación máxima: <strong>50 puntos</strong>). Admite la opción N/A (No aplicable).
-            </td>
-          </tr>
-
-          <!-- FILA 5: LORI -->
-          <tr>
-            <td class="model-name">
-              <strong>LORI</strong>
-              <span>Nesbit, Belfer & Leacock</span>
-            </td>
-            <td>
-              <p><strong>Metodología en 4 pasos:</strong></p>
-              <ol>
-                <li>Exploración del recurso.</li>
-                <li>Puntuación de criterios.</li>
-                <li>Justificación cualitativa.</li>
-                <li>Síntesis y mejora.</li>
-              </ol>
-            </td>
-            <td>
-              Marco estructurado, integral y estandarizado. Evalúa 9 dimensiones: calidad de contenidos, objetivos, feedback, motivación, diseño, usabilidad, accesibilidad, reusabilidad y cumplimiento de estándares.
-            </td>
-            <td>
-              Integra diseño, pedagogía y tecnología en un solo formato. Permite comparar distintos recursos o versiones bajo parámetros exactamente iguales.
-            </td>
-            <td>
-              Depende del juicio del evaluador. Evaluar las 9 dimensiones con justificación en profundidad resulta laborioso si se aplican a muchos recursos simultáneamente.
-            </td>
-            <td>
-              Escala de 1 a 5 puntos (1: Deficiente, 2: Bajo, 3: Aceptable, 4: Bueno, 5: Excelente, NA: No Aplica).
-            </td>
-          </tr>
-
-          <!-- FILA 6: REEVES -->
-          <tr>
-            <td class="model-name">
-              <strong>REEVES</strong>
-              <span>Educación Basada en Computadores</span>
-            </td>
-            <td>
-              <p><strong>Metodología:</strong> Análisis, selección de dimensiones y aplicación de instrumentos.</p>
-              <p><strong>Tipos de evaluación:</strong> Cognitiva, por desempeño y por carpetas (portafolios).</p>
-            </td>
-            <td>
-              Modelo con alto foco en la pedagogía. Evalúa 14 dimensiones bipolares (Epistemología, Filosofía pedagógica, Flexibilidad, Control de aprendizaje, Rol docente, Sensibilidad cultural, etc.).
-            </td>
-            <td>
-              Facilita un análisis profundo del valor educativo real del recurso. Promueve la reflexión crítica y el aprendizaje significativo en el estudiante.
-            </td>
-            <td>
-              Puede resultar difícil y demandar bastante tiempo a evaluadores sin una sólida formación pedagógica. No profundiza en métricas de software puro.
-            </td>
-            <td>
-              Escala de 5 puntos (1: Muy deficiente a 5: Excelente) para calificar las 14 dimensiones.
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <article class="card">
+        <h3>Recursos educativos digitales</h3>
+        <p>
+          [Ingrese aquí una introducción sobre los RED seleccionados,
+          su área de conocimiento, grado y características.]
+        </p>
+        <a class="btn" href="recursos-educativos-digitales.html">Ver contenido</a>
+      </article>
     </div>
+  </div>
+</section>
 
+<section class="section alt">
+  <div class="container">
+    <div class="content-box">
+      <h3>Introducción general</h3>
+      <p>
+        [Espacio destinado para explicar la relación entre los modelos de
+        evaluación y los Recursos Educativos Digitales seleccionados.]
+      </p>
+    </div>
   </div>
 </section>
 
 </main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <small>Universidad de Santander — UDES</small>
+    <small>Proyecto académico · Sitio diseñado para GitHub Pages</small>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
