@@ -571,9 +571,87 @@ tr:last-child td {
   }
 }
 
+.table-responsive-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
 /* ==========================================   mas css pagina modelos de evaluación ========================================== */
 
 
-.table-responsive-wrapper::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+/* ==========================================
+   ESTILOS ADICIONALES PARA TABLA DE EVALUACIÓN
+   ========================================== */
+
+.evaluation-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 1100px;
+  font-size: 0.95rem;
+}
+
+.evaluation-table th {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 16px 18px;
+  border-bottom: 3px solid var(--dorado);
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.evaluation-table td {
+  padding: 18px;
+  border-bottom: 1px solid var(--borde);
+  vertical-align: top;
+  color: var(--texto);
+  line-height: 1.6;
+  background-color: var(--blanco);
+}
+
+.evaluation-table tbody tr:nth-child(even) td {
+  background-color: #fbfdfc;
+}
+
+.evaluation-table tbody tr:hover td {
+  background-color: var(--verde-suave);
+  transition: background-color 0.25s ease;
+}
+
+.evaluation-table td.col-model {
+  background-color: var(--verde-claro) !important;
+  border-right: 2px solid var(--borde);
+  min-width: 220px;
+  width: 18%;
+  font-weight: bold;
+  color: var(--verde-oscuro);
+}
+
+.evaluation-table p {
+  margin-bottom: 6px;
+}
+
+.evaluation-table p:last-child {
+  margin-bottom: 0;
+}
+
+.data-table-wrap::-webkit-scrollbar {
+  height: 8px;
+}
+
+.data-table-wrap::-webkit-scrollbar-track {
+  background: var(--verde-suave);
+  border-radius: 0 0 8px 8px;
+}
+
+.data-table-wrap::-webkit-scrollbar-thumb {
+  background: var(--verde-medio);
+  border-radius: 4px;
+}
+
+.data-table-wrap::-webkit-scrollbar-thumb:hover {
+  background: var(--verde-oscuro);
 }
