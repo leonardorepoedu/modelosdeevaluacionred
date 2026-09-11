@@ -1191,3 +1191,49 @@ tr:last-child td {
     padding: 12px 16px;
   }
 }
+
+
+
+
+/* ==========================================
+   HEADER CON IMAGEN DE FONDO GLOBAL
+   ========================================== */
+
+.site-header {
+  /* Imagen de fondo cargada directamente desde el CSS con superposición sutil */
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.94)),
+    url('https://raw.githubusercontent.com/leonardorepoedu/modelosdeevaluacionred/refs/heads/main/assets/header%20web%20red.webp') no-repeat center center;
+  background-size: cover;
+  border-bottom: 2px solid var(--verde);
+}
+
+/* Fondo protector para el menú de navegación superior */
+.nav a,
+.dropdown-toggle {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(2px);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover,
+.dropdown-toggle:hover,
+.nav a.active,
+.dropdown-toggle.active {
+  background-color: var(--verde);
+  color: var(--blanco);
+}
+
+/* Ajustes responsivos para móviles */
+@media (max-width: 850px) {
+  .site-header {
+    background-position: center top;
+  }
+  
+  .nav.open {
+    background-color: rgba(255, 255, 255, 0.98);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+  }
+}
