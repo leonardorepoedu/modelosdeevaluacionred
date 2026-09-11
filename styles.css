@@ -1237,3 +1237,36 @@ tr:last-child td {
     box-shadow: var(--sombra);
   }
 }
+
+/* ==========================================
+   FOOTER CON IMAGEN DE FONDO GLOBAL
+   ========================================== */
+
+.footer {
+  /* Fondo con overlay verde oscuro y la imagen de fondo de la URL */
+  background: 
+    linear-gradient(rgba(22, 77, 58, 0.88), rgba(22, 77, 58, 0.94)),
+    url('https://raw.githubusercontent.com/leonardorepoedu/modelosdeevaluacionred/refs/heads/main/assets/footer%20web%20red.webp') no-repeat center center;
+  background-size: cover;
+  border-top: 3px solid var(--dorado);
+  position: relative;
+}
+
+.footer-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.footer small {
+  color: #ffffff;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Ajuste responsivo para pantallas pequeñas */
+@media (max-width: 520px) {
+  .footer {
+    background-position: center top;
+    padding: 22px 0;
+  }
+}
