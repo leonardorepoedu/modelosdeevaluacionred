@@ -108,304 +108,664 @@
 
 <!-- modelos contenido pagina -->
 
-<section class="section">
-  <div class="container">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelos de Evaluación de Recursos Educativos Digitales</title>
+  <style>
+    /* =========================================================
+       SITIO ACADÉMICO - EVALUACIÓN DE RECURSOS EDUCATIVOS
+       Compatible con GitHub Pages: usa rutas relativas.
+       ========================================================= */
 
+    :root {
+      --verde-oscuro: #164d3a;
+      --verde: #24734f;
+      --verde-medio: #3d8b65;
+      --verde-claro: #e9f3ed;
+      --verde-suave: #f4f8f5;
+      --dorado: #c9a44c;
+      --texto: #25312b;
+      --gris: #66736c;
+      --blanco: #ffffff;
+      --borde: #d9e4dd;
+      --sombra: 0 10px 28px rgba(22, 77, 58, .10);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      color: var(--texto);
+      background: #f7faf8;
+      line-height: 1.65;
+      font-size: 18px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      background: 
+        linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.94)),
+        url('https://raw.githubusercontent.com/leonardorepoedu/modelosdeevaluacionred/refs/heads/main/assets/header%20web%20red.webp') no-repeat center center;
+      background-size: cover;
+      border-bottom: 2px solid var(--verde);
+      box-shadow: 0 3px 14px rgba(0,0,0,.06);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px 0;
+    }
+
+    main {
+      min-height: calc(100vh - 210px);
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 62px 0;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      color: var(--verde-oscuro);
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .data-table-wrap {
+      overflow-x: auto;
+      background: var(--blanco);
+      border: 1px solid var(--borde);
+      border-radius: 8px;
+      box-shadow: var(--sombra);
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--borde);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .evaluation-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      min-width: 1100px;
+      font-size: 0.95rem;
+    }
+
+    .evaluation-table th {
+      background-color: var(--verde-oscuro);
+      color: var(--blanco);
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 16px 18px;
+      border-bottom: 3px solid var(--dorado);
+      text-align: left;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    .evaluation-table td {
+      padding: 18px;
+      border-bottom: 1px solid var(--borde);
+      vertical-align: top;
+      color: var(--texto);
+      line-height: 1.6;
+      background-color: var(--blanco);
+    }
+
+    .evaluation-table tbody tr:nth-child(even) td {
+      background-color: #fbfdfc;
+    }
+
+    .evaluation-table tbody tr:hover td {
+      background-color: var(--verde-suave);
+      transition: background-color 0.25s ease;
+    }
+
+    .evaluation-table td.col-model {
+      background-color: var(--verde-claro) !important;
+      border-right: 2px solid var(--borde);
+      min-width: 220px;
+      width: 18%;
+      font-weight: bold;
+      color: var(--verde-oscuro);
+    }
+
+    .evaluation-table p {
+      margin-bottom: 6px;
+    }
+
+    .evaluation-table p:last-child {
+      margin-bottom: 0;
+    }
+
+    .data-table-wrap::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .data-table-wrap::-webkit-scrollbar-track {
+      background: var(--verde-suave);
+      border-radius: 0 0 8px 8px;
+    }
+
+    .data-table-wrap::-webkit-scrollbar-thumb {
+      background: var(--verde-medio);
+      border-radius: 4px;
+    }
+
+    .data-table-wrap::-webkit-scrollbar-thumb:hover {
+      background: var(--verde-oscuro);
+    }
+
+    .models-container {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      margin-top: 25px;
+    }
+
+    .model-detail-card {
+      background: var(--blanco);
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+    }
+
+    .model-title-badge {
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+      padding: 22px 28px;
+      border-bottom: 4px solid var(--dorado);
+    }
+
+    .model-title-badge h2 {
+      color: var(--blanco);
+      margin-bottom: 6px;
+      font-size: 1.8rem;
+    }
+
+    .model-content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      padding: 28px;
+    }
+
+    .model-block {
+      background: var(--verde-suave);
+      border: 1px solid var(--borde);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .model-block h3 {
+      color: var(--verde);
+      font-size: 1.25rem;
+      border-bottom: 2px solid var(--verde-claro);
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+    }
+
+    .model-block p {
+      color: var(--texto);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      line-height: 1.55;
+    }
+
+    .model-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .model-block.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .limit-block {
+      background: #fffaf0;
+      border-left: 4px solid var(--dorado);
+    }
+
+    .limit-block h3 {
+      color: #8c6b1f;
+      border-bottom-color: #fce8bd;
+    }
+
+    .footer {
+      background: 
+        linear-gradient(rgba(22, 77, 58, 0.88), rgba(22, 77, 58, 0.94)),
+        url('https://raw.githubusercontent.com/leonardorepoedu/modelosdeevaluacionred/refs/heads/main/assets/footer%20web%20red.webp') no-repeat center center;
+      background-size: cover;
+      border-top: 3px solid var(--dorado);
+      position: relative;
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    @media (max-width: 850px) {
+      .model-content-grid {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        gap: 16px;
+      }
+
+      .model-title-badge {
+        padding: 18px 20px;
+      }
+
+      .model-title-badge h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      body {
+        font-size: 17px;
+      }
+
+      .container,
+      .footer-inner {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .section {
+        padding: 45px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner"></div>
+  </header>
+
+  <main class="container section">
+    
+    <!-- TABLA COMPARATIVA DE MODELOS -->
+    <div class="data-table-wrap">
+      <table class="evaluation-table">
+        <thead>
+          <tr>
+            <th>Modelo de evaluación</th>
+            <th>Componentes</th>
+            <th>Características</th>
+            <th>Ventajas</th>
+            <th>Desventajas</th>
+            <th>Métrica de evaluación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- NORMA UNE 71362 -->
+          <tr>
+            <td class="col-model">Norma UNE 71362</td>
+            <td>
+              <p>Calidad de los Materiales Educativos Digitales</p>
+              <p>Eficacia didáctica:</p>
+              <p>1. Descripción didáctica.</p>
+              <p>2. Calidad de los contenidos.</p>
+              <p>3. Capacidad para generar aprendizaje.</p>
+              <p>4. Adaptabilidad.</p>
+              <p>5. Interactividad.</p>
+              <p>6. Motivación.</p>
+              <p>&nbsp;</p>
+              <p>Eficacia tecnológica:</p>
+              <p>7. Formato y diseño.</p>
+              <p>8. Reusabilidad.</p>
+              <p>9. Portabilidad.</p>
+              <p>10. Robustez y estabilidad técnica.</p>
+              <p>&nbsp;</p>
+              <p>Accesibilidad:</p>
+              <p>11. Estructura del escenario de aprendizaje.</p>
+              <p>12. Navegación.</p>
+              <p>13. Operabilidad.</p>
+              <p>14. Accesibilidad del contenido audiovisual.</p>
+              <p>15. Accesibilidad del contenido textual.</p>
+            </td>
+            <td>
+              <p>Se trata de un marco amplio diseñado para valorar la calidad de los materiales educativos digitales. Su propósito central es servir como una guía de apoyo en cada etapa del camino, permitiendo desde crear contenidos desde cero hasta seleccionar aquellos que mejor se adapten a las necesidades de clase.</p>
+              <p>Por un lado, abarca aspectos pedagógicos, asegurándose de que el contenido no solo sea informativo, sino que realmente enseñe de forma efectiva y con sentido didáctico. Por otro lado, integra la parte tecnológica, cuidando que las herramientas digitales funcionen de manera óptima, estable y fluida durante su uso.</p>
+              <p>Finalmente, este enfoque da un lugar fundamental a la accesibilidad. De esta manera, busca que cualquier estudiante, independientemente de sus capacidades o condiciones, pueda acceder y aprovechar estos materiales para enriquecer su proceso de enseñanza y aprendizaje.</p>
+            </td>
+            <td>
+              <p>Su mayor virtud radica en lo completa que resulta su evaluación. En lugar de quedarse únicamente en si la lección está bien redactada o si la plataforma responde sin fallos, decide dar un paso más allá para observar la experiencia educativa en toda su dimensión.</p>
+              <p>Al incorporar la accesibilidad dentro de sus criterios clave, logra un análisis mucho más equilibrado e integral. Esto permite abrir las puertas a una diversidad real de estudiantes, garantizando que el material sea verdaderamente útil, accesible y aprovechable para cada uno de ellos.</p>
+            </td>
+            <td>
+              <p>Poner en práctica este marco suele ser un proceso más amplio y exigente que en COdA, principalmente por la cantidad de criterios e indicadores que abarca. No es una revisión rápida, por lo que llevar a cabo una valoración completa requiere dedicarle más tiempo y una preparación previa adecuada.</p>
+              <p>Además, ciertos aspectos de la revisión técnica y de accesibilidad no son del todo intuitivos. Evaluar estos puntos con precisión puede demandar conocimientos específicos en la materia, exigiendo un esfuerzo adicional a la hora de examinar cada recurso educativo.</p>
+            </td>
+            <td>
+              <p>Su funcionamiento se basa en una rúbrica compuesta por 15 criterios e indicadores de calidad. A través de ellos, es posible realizar un análisis profundo que abarca tanto la parte cuantitativa como la cualitativa del material evaluado.</p>
+              <p>Es importante tener cuidado para no confundir este sistema con la escala de 1 a 5 propia de COdA. Su estructura responde a un estándar distinto, diseñado para ofrecer una medición ajustada a sus propios parámetros de calidad.</p>
+            </td>
+          </tr>
+
+          <!-- COdA -->
+          <tr>
+            <td class="col-model">COdA – Calidad de los Objetos de Aprendizaje</td>
+            <td>
+              <p>Componente didáctico:</p>
+              <p>1. Objetivos y coherencia didáctica.</p>
+              <p>2. Calidad de los contenidos.</p>
+              <p>3. Capacidad de generar reflexión, crítica e innovación.</p>
+              <p>4. Interactividad y adaptabilidad.</p>
+              <p>5. Motivación.</p>
+              <p>&nbsp;</p>
+              <p>Componente tecnológico:</p>
+              <p>6. Formato y diseño.</p>
+              <p>7. Usabilidad.</p>
+              <p>8. Accesibilidad.</p>
+              <p>9. Reusabilidad.</p>
+              <p>10. Interoperabilidad.</p>
+            </td>
+            <td>
+              <p>COdA permite evaluar la calidad de un Objeto de Aprendizaje teniendo en cuenta dos aspectos principales: su utilidad educativa y sus características tecnológicas.</p>
+              <p>Los primeros cinco criterios se enfocan en valorar aspectos relacionados con el aprendizaje, como la forma en que el recurso apoya y facilita la enseñanza.</p>
+              <p>Los cinco criterios restantes evalúan aspectos técnicos, relacionados con el funcionamiento, uso y características tecnológicas del recurso.</p>
+              <p>COdA puede utilizarse en diferentes momentos del proceso: mientras se crea el recurso, antes de utilizarlo o después de su implementación, permitiendo identificar fortalezas y aspectos que pueden mejorarse.</p>
+              <p>De esta manera, COdA ofrece una valoración general que permite comprobar si un Objeto de Aprendizaje es adecuado tanto desde el punto de vista educativo como tecnológico.</p>
+            </td>
+            <td>
+              <p>COdA es una herramienta sencilla de aplicar, lo que facilita su uso durante la revisión de un Objeto de Aprendizaje.</p>
+              <p>Permite valorar de manera conjunta los aspectos pedagógicos y tecnológicos, ofreciendo una visión más completa de la calidad del recurso.</p>
+              <p>Ayuda al docente a reconocer las fortalezas del material y detectar posibles aspectos por mejorar antes de utilizarlo con los estudiantes.</p>
+              <p>Además, cuenta con criterios y subcriterios concretos que orientan la revisión y facilitan identificar qué elementos del recurso requieren atención.</p>
+            </td>
+            <td>
+              <p>Una evaluación completa requiere revisar con cuidado los diferentes subcriterios de cada categoría, lo que puede tomar más tiempo y atención.</p>
+              <p>Algunos aspectos pueden depender de la interpretación de quien realiza la evaluación, por lo que los resultados pueden variar entre evaluadores.</p>
+              <p>Además, COdA está diseñado principalmente para evaluar Objetos de Aprendizaje, por lo que no necesariamente contempla todos los aspectos relacionados con el contexto educativo en el que se utiliza el recurso.</p>
+              <p>Por esta razón, puede ser necesario complementar la evaluación con otros criterios que permitan analizar de manera más amplia la experiencia educativa.</p>
+            </td>
+            <td>
+              <p>Cada uno de los diez criterios de COdA se califica en una escala de 1 a 5, donde 1 representa el nivel más bajo y 5 el nivel más alto.</p>
+              <p>Cuando un criterio no corresponde al recurso que se está evaluando, puede utilizarse la opción N/A (No aplicable).</p>
+              <p>Si se califican los diez criterios, la puntuación máxima que se puede obtener es de 50 puntos. Esta puntuación permite tener una referencia general sobre la valoración del Objeto de Aprendizaje.</p>
+            </td>
+          </tr>
+
+          <!-- LORI -->
+          <tr>
+            <td class="col-model">LORI</td>
+            <td>
+              <p>Metodología</p>
+            </td>
+            <td>
+              <p>El modelo LORI es una herramienta para evaluar la calidad de los objetos de aprendizaje y recursos educativos digitales. Fue desarrollado por Nesbit, Belfer y Leacock, y su propósito es ofrecer un marco estructurado que combine criterios pedagógicos, técnicos y de diseño para garantizar la eficacia y calidad de un recurso digital.</p>
+              <p>El proceso es sencillo y se puede resumir en 4 pasos:</p>
+              <p>1.Exploración: El evaluador (o equipo) interactúa con el recurso educativo digital en su totalidad.</p>
+              <p>2. Puntuación: Se asigna una calificación a cada uno de los 9 criterios de forma independiente.</p>
+              <p>3. Justificación cualitativa: Se añaden comentarios o notas explicativas que justifiquen la puntuación otorgada (esto es clave para el rediseño).</p>
+              <p>4. Síntesis y mejora: Se calcula el puntaje total, se identifican las falencias y se hacen recomendaciones para mejorar el recurso.</p>
+            </td>
+            <td>
+              <p>Integral: No solo evalúa lo "bonito" (diseño), sino también lo pedagógico y lo técnico.</p>
+              <p>Colaborativo: Está pensado para ser usado por equipos (docentes, diseñadores instruccionales).Flexible: Se puede aplicar a diversos formatos: videos, simuladores, infografías interactivas, etc.</p>
+              <p>Estandarizado: Proporciona un lenguaje común y un formato de revisión que facilita la comparación entre diferentes recursos.</p>
+              <p>Integra diseño, pedagogía y tecnología en una sola herramienta fácil de seguir.</p>
+              <p>Permite comparar distintos recursos o versiones de un mismo recurso bajo los mismos parámetros.</p>
+            </td>
+            <td>
+              <p>Depende del criterio del evaluador; pretende una breve evaluación previa del equipo para ser objetivo.</p>
+              <p>Evaluar 9 dimensiones con profundidad y justificación puede ser laborioso si se evalúan muchos recursos a la vez</p>
+            </td>
+            <td>
+              <p>Calidad de los contenidos: Veracidad, exactitud, presentación equilibrada de ideas y nivel adecuado de detalle.</p>
+              <p>Adecuación de los objetivos de aprendizaje: Coherencia entre los objetivos, actividades, evaluaciones y perfil del estudiante.</p>
+              <p>Feedback (retroalimentación) y adaptabilidad: Contenido adaptativo o feedback dirigido en función de la respuesta de cada estudiante y su estilo de aprendizaje.</p>
+              <p>Motivación: Capacidad de motivar y generar interés en un grupo concreto de alumno/as.</p>
+              <p>Diseño y presentación: El diseño de la información audiovisual favorece el adecuado procesamiento de la información</p>
+              <p>Usabilidad en la interacción: Facilidad de navegación, interfaz, predictiva para el usuario y calidad de los recursos de ayuda de la interfaz</p>
+              <p>Accesibilidad: El diseño de los controles y la presentación de la información está adaptada para personas en condición de discapacidad y dispositivos móviles.</p>
+              <p>Reusabilidad: Capacidad del recurso para usarse en distintos escenarios de aprendizaje y con alumnos de distintos bagajes.</p>
+              <p>Cumplimiento de estándares: Adecuación a los estándares y especificaciones internacionales.</p>
+              <p>Se utiliza una escala de 1 a 5 puntos para cada uno de los 9 criterios:</p>
+              <p>1: Deficiente</p>
+              <p>2: Bajo</p>
+              <p>3: Aceptable</p>
+              <p>4: Bueno</p>
+              <p>5: Excelente</p>
+              <p>NA: No Aplica (si el criterio no es relevante para ese recurso específico).</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- VISTA EN TARJETAS PARA DETALLE DE MODELOS -->
     <div class="models-container">
-
-      <!-- Norma UNE 71362 -->
+      
+      <!-- TARJETA NORMA UNE 71362 -->
       <article class="model-detail-card">
-
-        <div class="model-title-badge">
-          <h2>Modelo de evaluación</h2>
-        </div>
-
+        <header class="model-title-badge">
+          <h2>Norma UNE 71362</h2>
+          <span class="model-subtitle">Calidad de los Materiales Educativos Digitales</span>
+        </header>
         <div class="model-content-grid">
-
           <div class="model-block">
             <h3>Componentes</h3>
+            <p>Eficacia didáctica:</p>
+            <p>1. Descripción didáctica.</p>
+            <p>2. Calidad de los contenidos.</p>
+            <p>3. Capacidad para generar aprendizaje.</p>
+            <p>4. Adaptabilidad.</p>
+            <p>5. Interactividad.</p>
+            <p>6. Motivación.</p>
+            <p>&nbsp;</p>
+            <p>Eficacia tecnológica:</p>
+            <p>7. Formato y diseño.</p>
+            <p>8. Reusabilidad.</p>
+            <p>9. Portabilidad.</p>
+            <p>10. Robustez y estabilidad técnica.</p>
+            <p>&nbsp;</p>
+            <p>Accesibilidad:</p>
+            <p>11. Estructura del escenario de aprendizaje.</p>
+            <p>12. Navegación.</p>
+            <p>13. Operabilidad.</p>
+            <p>14. Accesibilidad del contenido audiovisual.</p>
+            <p>15. Accesibilidad del contenido textual.</p>
           </div>
-
           <div class="model-block">
             <h3>Características</h3>
-          </div>
-
-          <div class="model-block">
-            <h3>Ventajas</h3>
-          </div>
-
-          <div class="model-block">
-            <h3>Desventajas</h3>
-          </div>
-
-          <div class="model-block full-width">
-            <h3>Métrica de evaluación</h3>
-          </div>
-
-          <div class="model-block full-width highlight-block">
-            <h3>Norma UNE 71362</h3>
-            <p>Calidad de los Materiales Educativos Digitales</p>
-          </div>
-
-          <div class="model-block full-width">
-            <h3>Eficacia didáctica:</h3>
-            <ol>
-              <li>Descripción didáctica.</li>
-              <li>Calidad de los contenidos.</li>
-              <li>Capacidad para generar aprendizaje.</li>
-              <li>Adaptabilidad.</li>
-              <li>Interactividad.</li>
-              <li>Motivación.</li>
-            </ol>
-
-            <h3>Eficacia tecnológica:</h3>
-            <ol start="7">
-              <li>Formato y diseño.</li>
-              <li>Reusabilidad.</li>
-              <li>Portabilidad.</li>
-              <li>Robustez y estabilidad técnica.</li>
-            </ol>
-
-            <h3>Accesibilidad:</h3>
-            <ol start="11">
-              <li>Estructura del escenario de aprendizaje.</li>
-              <li>Navegación.</li>
-              <li>Operabilidad.</li>
-              <li>Accesibilidad del contenido audiovisual.</li>
-              <li>Accesibilidad del contenido textual.</li>
-            </ol>
-          </div>
-
-          <div class="model-block full-width">
             <p>Se trata de un marco amplio diseñado para valorar la calidad de los materiales educativos digitales. Su propósito central es servir como una guía de apoyo en cada etapa del camino, permitiendo desde crear contenidos desde cero hasta seleccionar aquellos que mejor se adapten a las necesidades de clase.</p>
-
             <p>Por un lado, abarca aspectos pedagógicos, asegurándose de que el contenido no solo sea informativo, sino que realmente enseñe de forma efectiva y con sentido didáctico. Por otro lado, integra la parte tecnológica, cuidando que las herramientas digitales funcionen de manera óptima, estable y fluida durante su uso.</p>
-
             <p>Finalmente, este enfoque da un lugar fundamental a la accesibilidad. De esta manera, busca que cualquier estudiante, independientemente de sus capacidades o condiciones, pueda acceder y aprovechar estos materiales para enriquecer su proceso de enseñanza y aprendizaje.</p>
           </div>
-
-          <div class="model-block full-width highlight-block">
+          <div class="model-block">
+            <h3>Ventajas</h3>
             <p>Su mayor virtud radica en lo completa que resulta su evaluación. En lugar de quedarse únicamente en si la lección está bien redactada o si la plataforma responde sin fallos, decide dar un paso más allá para observar la experiencia educativa en toda su dimensión.</p>
-
             <p>Al incorporar la accesibilidad dentro de sus criterios clave, logra un análisis mucho más equilibrado e integral. Esto permite abrir las puertas a una diversidad real de estudiantes, garantizando que el material sea verdaderamente útil, accesible y aprovechable para cada uno de ellos.</p>
           </div>
-
-          <div class="model-block full-width">
+          <div class="model-block limit-block">
+            <h3>Desventajas</h3>
             <p>Poner en práctica este marco suele ser un proceso más amplio y exigente que en COdA, principalmente por la cantidad de criterios e indicadores que abarca. No es una revisión rápida, por lo que llevar a cabo una valoración completa requiere dedicarle más tiempo y una preparación previa adecuada.</p>
-
             <p>Además, ciertos aspectos de la revisión técnica y de accesibilidad no son del todo intuitivos. Evaluar estos puntos con precisión puede demandar conocimientos específicos en la materia, exigiendo un esfuerzo adicional a la hora de examinar cada recurso educativo.</p>
           </div>
-
-          <div class="model-block full-width">
-            <p>Su funcionamiento se basa en una rúbrica compuesta por 15 criterios e indicadores de calidad. A través de ellos, es posible realizar un análisis profundo que abarca tanto la parte cuantitativa como la cualitativa del material evaluado.</p>
-
-            <p>Es importante tener cuidado para no confundir este sistema con la escala de 1 a 5 propia de COdA. Su estructura responde a un estándar distinto, diseñado para ofrecer una medición ajustada a sus propios parámetros de calidad.</p>
-          </div>
-
-        </div>
-      </article>
-
-
-      <!-- COdA -->
-      <article class="model-detail-card">
-
-        <div class="model-title-badge">
-          <h2>Modelo de evaluación</h2>
-        </div>
-
-        <div class="model-content-grid">
-
-          <div class="model-block">
-            <h3>Componentes</h3>
-          </div>
-
-          <div class="model-block">
-            <h3>Características</h3>
-          </div>
-
-          <div class="model-block">
-            <h3>Ventajas</h3>
-          </div>
-
-          <div class="model-block">
-            <h3>Desventajas</h3>
-          </div>
-
           <div class="model-block full-width">
             <h3>Métrica de evaluación</h3>
+            <p>Su funcionamiento se basa en una rúbrica compuesta por 15 criterios e indicadores de calidad. A través de ellos, es posible realizar un análisis profundo que abarca tanto la parte cuantitativa como la cualitativa del material evaluado.</p>
+            <p>Es importante tener cuidado para no confundir este sistema con la escala de 1 a 5 propia de COdA. Su estructura responde a un estándar distinto, diseñado para ofrecer una medición ajustada a sus propios parámetros de calidad.</p>
           </div>
-
-          <div class="model-block full-width highlight-block">
-            <h3>COdA – Calidad de los Objetos de Aprendizaje</h3>
-          </div>
-
-          <div class="model-block full-width">
-            <h3>Componente didáctico:</h3>
-            <ol>
-              <li>Objetivos y coherencia didáctica.</li>
-              <li>Calidad de los contenidos.</li>
-              <li>Capacidad de generar reflexión, crítica e innovación.</li>
-              <li>Interactividad y adaptabilidad.</li>
-              <li>Motivación.</li>
-            </ol>
-
-            <h3>Componente tecnológico:</h3>
-            <ol start="6">
-              <li>Formato y diseño.</li>
-              <li>Usabilidad.</li>
-              <li>Accesibilidad.</li>
-              <li>Reusabilidad.</li>
-              <li>Interoperabilidad.</li>
-            </ol>
-          </div>
-
-          <div class="model-block full-width">
-            <p>COdA permite evaluar la calidad de un Objeto de Aprendizaje teniendo en cuenta dos aspectos principales: su utilidad educativa y sus características tecnológicas.</p>
-
-            <p>Los primeros cinco criterios se enfocan en valorar aspectos relacionados con el aprendizaje, como la forma en que el recurso apoya y facilita la enseñanza.</p>
-
-            <p>Los cinco criterios restantes evalúan aspectos técnicos, relacionados con el funcionamiento, uso y características tecnológicas del recurso.</p>
-
-            <p>COdA puede utilizarse en diferentes momentos del proceso: mientras se crea el recurso, antes de utilizarlo o después de su implementación, permitiendo identificar fortalezas y aspectos que pueden mejorarse.</p>
-
-            <p>De esta manera, COdA ofrece una valoración general que permite comprobar si un Objeto de Aprendizaje es adecuado tanto desde el punto de vista educativo como tecnológico.</p>
-          </div>
-
-          <div class="model-block full-width highlight-block">
-            <p>COdA es una herramienta sencilla de aplicar, lo que facilita su uso durante la revisión de un Objeto de Aprendizaje.</p>
-
-            <p>Permite valorar de manera conjunta los aspectos pedagógicos y tecnológicos, ofreciendo una visión más completa de la calidad del recurso.</p>
-
-            <p>Ayuda al docente a reconocer las fortalezas del material y detectar posibles aspectos por mejorar antes de utilizarlo con los estudiantes.</p>
-
-            <p>Además, cuenta con criterios y subcriterios concretos que orientan la revisión y facilitan identificar qué elementos del recurso requieren atención.</p>
-          </div>
-
-          <div class="model-block full-width">
-            <p>Una evaluación completa requiere revisar con cuidado los diferentes subcriterios de cada categoría, lo que puede tomar más tiempo y atención.</p>
-
-            <p>Algunos aspectos pueden depender de la interpretación de quien realiza la evaluación, por lo que los resultados pueden variar entre evaluadores.</p>
-
-            <p>Además, COdA está diseñado principalmente para evaluar Objetos de Aprendizaje, por lo que no necesariamente contempla todos los aspectos relacionados con el contexto educativo en el que se utiliza el recurso.</p>
-
-            <p>Por esta razón, puede ser necesario complementar la evaluación con otros criterios que permitan analizar de manera más amplia la experiencia educativa.</p>
-          </div>
-
-          <div class="model-block full-width">
-            <p>Cada uno de los diez criterios de COdA se califica en una escala de 1 a 5, donde 1 representa el nivel más bajo y 5 el nivel más alto.</p>
-
-            <p>Cuando un criterio no corresponde al recurso que se está evaluando, puede utilizarse la opción N/A (No aplicable).</p>
-
-            <p>Si se califican los diez criterios, la puntuación máxima que se puede obtener es de 50 puntos. Esta puntuación permite tener una referencia general sobre la valoración del Objeto de Aprendizaje.</p>
-          </div>
-
         </div>
       </article>
 
-
-      <!-- LORI -->
+      <!-- TARJETA COdA -->
       <article class="model-detail-card">
-
-        <div class="model-title-badge">
-          <h2>Modelo de Evaluación</h2>
-        </div>
-
+        <header class="model-title-badge">
+          <h2>COdA – Calidad de los Objetos de Aprendizaje</h2>
+        </header>
         <div class="model-content-grid">
-
           <div class="model-block">
-            <h3>Metodología</h3>
+            <h3>Componentes</h3>
+            <p>Componente didáctico:</p>
+            <p>1. Objetivos y coherencia didáctica.</p>
+            <p>2. Calidad de los contenidos.</p>
+            <p>3. Capacidad de generar reflexión, crítica e innovación.</p>
+            <p>4. Interactividad y adaptabilidad.</p>
+            <p>5. Motivación.</p>
+            <p>&nbsp;</p>
+            <p>Componente tecnológico:</p>
+            <p>6. Formato y diseño.</p>
+            <p>7. Usabilidad.</p>
+            <p>8. Accesibilidad.</p>
+            <p>9. Reusabilidad.</p>
+            <p>10. Interoperabilidad.</p>
           </div>
-
           <div class="model-block">
             <h3>Características</h3>
+            <p>COdA permite evaluar la calidad de un Objeto de Aprendizaje teniendo en cuenta dos aspectos principales: su utilidad educativa y sus características tecnológicas.</p>
+            <p>Los primeros cinco criterios se enfocan en valorar aspectos relacionados con el aprendizaje, como la forma en que el recurso apoya y facilita la enseñanza.</p>
+            <p>Los cinco criterios restantes evalúan aspectos técnicos, relacionados con el funcionamiento, uso y características tecnológicas del recurso.</p>
+            <p>COdA puede utilizarse en diferentes momentos del proceso: mientras se crea el recurso, antes de utilizarlo o después de su implementación, permitiendo identificar fortalezas y aspectos que pueden mejorarse.</p>
+            <p>De esta manera, COdA ofrece una valoración general que permite comprobar si un Objeto de Aprendizaje es adecuado tanto desde el punto de vista educativo como tecnológico.</p>
           </div>
-
           <div class="model-block">
             <h3>Ventajas</h3>
+            <p>COdA es una herramienta sencilla de aplicar, lo que facilita su uso durante la revisión de un Objeto de Aprendizaje.</p>
+            <p>Permite valorar de manera conjunta los aspectos pedagógicos y tecnológicos, ofreciendo una visión más completa de la calidad del recurso.</p>
+            <p>Ayuda al docente a reconocer las fortalezas del material y detectar posibles aspectos por mejorar antes de utilizarlo con los estudiantes.</p>
+            <p>Además, cuenta con criterios y subcriterios concretos que orientan la revisión y facilitan identificar qué elementos del recurso requieren atención.</p>
           </div>
-
-          <div class="model-block">
+          <div class="model-block limit-block">
             <h3>Desventajas</h3>
+            <p>Una evaluación completa requiere revisar con cuidado los diferentes subcriterios de cada categoría, lo que puede tomar más tiempo y atención.</p>
+            <p>Algunos aspectos pueden depender de la interpretación de quien realiza la evaluación, por lo que los resultados pueden variar entre evaluadores.</p>
+            <p>Además, COdA está diseñado principalmente para evaluar Objetos de Aprendizaje, por lo que no necesariamente contempla todos los aspectos relacionados con el contexto educativo en el que se utiliza el recurso.</p>
+            <p>Por esta razón, puede ser necesario complementar la evaluación con otros criterios que permitan analizar de manera más amplia la experiencia educativa.</p>
           </div>
-
           <div class="model-block full-width">
-            <h3>Métrica de Evaluación</h3>
+            <h3>Métrica de evaluación</h3>
+            <p>Cada uno de los diez criterios de COdA se califica en una escala de 1 a 5, donde 1 representa el nivel más bajo y 5 el nivel más alto.</p>
+            <p>Cuando un criterio no corresponde al recurso que se está evaluando, puede utilizarse la opción N/A (No aplicable).</p>
+            <p>Si se califican los diez criterios, la puntuación máxima que se puede obtener es de 50 puntos. Esta puntuación permite tener una referencia general sobre la valoración del Objeto de Aprendizaje.</p>
           </div>
+        </div>
+      </article>
 
-          <div class="model-block full-width highlight-block">
+      <!-- TARJETA LORI -->
+      <article class="model-detail-card">
+        <header class="model-title-badge">
+          <h2>Modelo de Evaluación LORI</h2>
+        </header>
+        <div class="model-content-grid">
+          <div class="model-block">
+            <h3>Componentes / Metodología</h3>
+            <p>Metodología</p>
+          </div>
+          <div class="model-block">
+            <h3>Características</h3>
             <p>El modelo LORI es una herramienta para evaluar la calidad de los objetos de aprendizaje y recursos educativos digitales. Fue desarrollado por Nesbit, Belfer y Leacock, y su propósito es ofrecer un marco estructurado que combine criterios pedagógicos, técnicos y de diseño para garantizar la eficacia y calidad de un recurso digital.</p>
-          </div>
-
-          <div class="model-block full-width">
             <p>El proceso es sencillo y se puede resumir en 4 pasos:</p>
-
-            <ol>
-              <li>Exploración: El evaluador (o equipo) interactúa con el recurso educativo digital en su totalidad.</li>
-              <li>Puntuación: Se asigna una calificación a cada uno de los 9 criterios de forma independiente.</li>
-              <li>Justificación cualitativa: Se añaden comentarios o notas explicativas que justifiquen la puntuación otorgada (esto es clave para el rediseño).</li>
-              <li>Síntesis y mejora: Se calcula el puntaje total, se identifican las falencias y se hacen recomendaciones para mejorar el recurso.</li>
-            </ol>
+            <p>1.Exploración: El evaluador (o equipo) interactúa con el recurso educativo digital en su totalidad.</p>
+            <p>2. Puntuación: Se asigna una calificación a cada uno de los 9 criterios de forma independiente.</p>
+            <p>3. Justificación cualitativa: Se añaden comentarios o notas explicativas que justifiquen la puntuación otorgada (esto es clave para el rediseño).</p>
+            <p>4. Síntesis y mejora: Se calcula el puntaje total, se identifican las falencias y se hacen recomendaciones para mejorar el recurso.</p>
           </div>
-
-          <div class="model-block full-width">
-            <p><strong>Integral:</strong> No solo evalúa lo "bonito" (diseño), sino también lo pedagógico y lo técnico.</p>
-
-            <p><strong>Colaborativo:</strong> Está pensado para ser usado por equipos (docentes, diseñadores instruccionales).<strong>Flexible:</strong> Se puede aplicar a diversos formatos: videos, simuladores, infografías interactivas, etc.</p>
-
-            <p><strong>Estandarizado:</strong> Proporciona un lenguaje común y un formato de revisión que facilita la comparación entre diferentes recursos.</p>
-          </div>
-
-          <div class="model-block full-width highlight-block">
+          <div class="model-block">
+            <h3>Ventajas</h3>
+            <p>Integral: No solo evalúa lo "bonito" (diseño), sino también lo pedagógico y lo técnico.</p>
+            <p>Colaborativo: Está pensado para ser usado por equipos (docentes, diseñadores instruccionales).Flexible: Se puede aplicar a diversos formatos: videos, simuladores, infografías interactivas, etc.</p>
+            <p>Estandarizado: Proporciona un lenguaje común y un formato de revisión que facilita la comparación entre diferentes recursos.</p>
             <p>Integra diseño, pedagogía y tecnología en una sola herramienta fácil de seguir.</p>
-
             <p>Permite comparar distintos recursos o versiones de un mismo recurso bajo los mismos parámetros.</p>
           </div>
-
-          <div class="model-block full-width">
+          <div class="model-block limit-block">
+            <h3>Desventajas</h3>
             <p>Depende del criterio del evaluador; pretende una breve evaluación previa del equipo para ser objetivo.</p>
-
             <p>Evaluar 9 dimensiones con profundidad y justificación puede ser laborioso si se evalúan muchos recursos a la vez</p>
           </div>
-
           <div class="model-block full-width">
-            <p><strong>Calidad de los contenidos:</strong> Veracidad, exactitud, presentación equilibrada de ideas y nivel adecuado de detalle.</p>
-
-            <p><strong>Adecuación de los objetivos de aprendizaje:</strong> Coherencia entre los objetivos, actividades, evaluaciones y perfil del estudiante.</p>
-
-            <p><strong>Feedback (retroalimentación) y adaptabilidad:</strong> Contenido adaptativo o feedback dirigido en función de la respuesta de cada estudiante y su estilo de aprendizaje.</p>
-
-            <p><strong>Motivación:</strong> Capacidad de motivar y generar interés en un grupo concreto de alumno/as.</p>
-
-            <p><strong>Diseño y presentación:</strong> El diseño de la información audiovisual favorece el adecuado procesamiento de la información</p>
-
-            <p><strong>Usabilidad en la interacción:</strong> Facilidad de navegación, interfaz, predictiva para el usuario y calidad de los recursos de ayuda de la interfaz</p>
-
-            <p><strong>Accesibilidad:</strong> El diseño de los controles y la presentación de la información está adaptada para personas en condición de discapacidad y dispositivos móviles.</p>
-
-            <p><strong>Reusabilidad:</strong> Capacidad del recurso para usarse en distintos escenarios de aprendizaje y con alumnos de distintos bagajes.</p>
-
-            <p><strong>Cumplimiento de estándares:</strong> Adecuación a los estándares y especificaciones internacionales.</p>
-
+            <h3>Métrica de Evaluación</h3>
+            <p>Calidad de los contenidos: Veracidad, exactitud, presentación equilibrada de ideas y nivel adecuado de detalle.</p>
+            <p>Adecuación de los objetivos de aprendizaje: Coherencia entre los objetivos, actividades, evaluaciones y perfil del estudiante.</p>
+            <p>Feedback (retroalimentación) y adaptabilidad: Contenido adaptativo o feedback dirigido en función de la respuesta de cada estudiante y su estilo de aprendizaje.</p>
+            <p>Motivación: Capacidad de motivar y generar interés en un grupo concreto de alumno/as.</p>
+            <p>Diseño y presentación: El diseño de la información audiovisual favorece el adecuado procesamiento de la información</p>
+            <p>Usabilidad en la interacción: Facilidad de navegación, interfaz, predictiva para el usuario y calidad de los recursos de ayuda de la interfaz</p>
+            <p>Accesibilidad: El diseño de los controles y la presentación de la información está adaptada para personas en condición de discapacidad y dispositivos móviles.</p>
+            <p>Reusabilidad: Capacidad del recurso para usarse en distintos escenarios de aprendizaje y con alumnos de distintos bagajes.</p>
+            <p>Cumplimiento de estándares: Adecuación a los estándares y especificaciones internacionales.</p>
             <p>Se utiliza una escala de 1 a 5 puntos para cada uno de los 9 criterios:</p>
-
-            <ol>
-              <li>Deficiente</li>
-              <li>Bajo</li>
-              <li>Aceptable</li>
-              <li>Bueno</li>
-              <li>Excelente</li>
-            </ol>
-
+            <p>1: Deficiente</p>
+            <p>2: Bajo</p>
+            <p>3: Aceptable</p>
+            <p>4: Bueno</p>
+            <p>5: Excelente</p>
             <p>NA: No Aplica (si el criterio no es relevante para ese recurso específico).</p>
           </div>
-
         </div>
       </article>
 
     </div>
+  </main>
 
-  </div>
-</section>
+  <footer class="footer">
+    <div class="footer-inner"></div>
+  </footer>
+
+</body>
+</html>
 
 
 
