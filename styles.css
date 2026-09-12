@@ -1270,3 +1270,256 @@ tr:last-child td {
     padding: 22px 0;
   }
 }
+
+
+
+
+
+/* ========================================== css modelos escogidos ========================================== */
+
+
+
+
+
+
+
+/* =========================================================
+   CONTENIDO DE MODELOS DE EVALUACIÓN
+   ========================================================= */
+
+/* Separación y lectura general de los bloques */
+
+.model-block {
+  height: 100%;
+}
+
+.model-block > p {
+  text-align: left;
+}
+
+/* Subtítulos internos */
+
+.model-block h4 {
+  color: var(--verde-oscuro);
+  font-size: 1.08rem;
+  margin: 18px 0 10px;
+  font-weight: 700;
+}
+
+.model-block h4:first-child {
+  margin-top: 0;
+}
+
+/* Listas numeradas */
+
+.model-block ol,
+.model-block ul {
+  padding-left: 28px;
+  margin: 8px 0 4px;
+}
+
+.model-block li {
+  margin-bottom: 7px;
+  padding-left: 3px;
+  line-height: 1.55;
+}
+
+.model-block li:last-child {
+  margin-bottom: 0;
+}
+
+/* Separación entre componentes */
+
+.evaluation-component {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.evaluation-component:first-of-type {
+  padding-top: 4px;
+}
+
+.evaluation-component:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Metodología LORI */
+
+.methodology-list {
+  margin-top: 15px !important;
+}
+
+.methodology-list li {
+  margin-bottom: 13px;
+}
+
+/* Características LORI */
+
+.feature-item {
+  background: var(--blanco);
+  border-left: 3px solid var(--verde-medio);
+  border-bottom: 1px solid var(--borde);
+  padding: 13px 16px;
+  margin-bottom: 10px;
+  border-radius: 0 6px 6px 0;
+}
+
+.feature-item:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.feature-item p {
+  margin-bottom: 0;
+}
+
+/* Criterios LORI */
+
+.lori-criteria {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.criterion-item {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 7px;
+  padding: 15px 17px;
+}
+
+.criterion-item p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* Escala LORI */
+
+.lori-scale {
+  margin-top: 24px;
+  padding: 20px;
+  background: var(--verde-claro);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+}
+
+.lori-scale p {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.lori-scale ul {
+  margin-top: 5px;
+}
+
+/* Nombre del modelo */
+
+.highlight-block h3 {
+  font-size: 1.45rem;
+}
+
+.highlight-block p {
+  font-size: 1rem;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .model-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lori-criteria {
+    grid-template-columns: 1fr;
+  }
+
+  .model-block {
+    padding: 18px;
+  }
+
+  .model-block h3 {
+    font-size: 1.2rem;
+  }
+
+  .highlight-block h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* =========================================================
+   CELULARES
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+  .models-container {
+    gap: 25px;
+    margin-top: 15px;
+  }
+
+  .model-detail-card {
+    border-radius: 9px;
+  }
+
+  .model-title-badge {
+    padding: 17px 18px;
+  }
+
+  .model-title-badge h2 {
+    font-size: 1.4rem;
+  }
+
+  .model-content-grid {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .model-block {
+    padding: 16px;
+    border-radius: 7px;
+  }
+
+  .model-block p {
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  .model-block h3 {
+    font-size: 1.15rem;
+  }
+
+  .model-block h4 {
+    font-size: 1.02rem;
+  }
+
+  .model-block ol,
+  .model-block ul {
+    padding-left: 24px;
+  }
+
+  .model-block li {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .lori-scale {
+    padding: 15px;
+  }
+
+  .criterion-item {
+    padding: 14px;
+  }
+
+  .criterion-item p {
+    font-size: 0.94rem;
+  }
+
+  .feature-item {
+    padding: 12px 13px;
+  }
+}
