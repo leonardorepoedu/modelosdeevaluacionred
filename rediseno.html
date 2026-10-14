@@ -1,184 +1,103 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rediseño | Evaluación de Recursos Educativos Digitales</title>
+  <meta name="description" content="Propuesta de rediseño de un Recurso Educativo Digital.">
+  <title>Rediseño | UDES</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="rediseno-responsive.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <a href="index.html" aria-label="Inicio">
         <img src="assets/logo-udes.png" alt="Universidad de Santander UDES">
-        <span class="brand-text">
-          <strong>Sitio académico informativo</strong>
-          <small>Evaluación y rediseño de Recursos Educativos Digitales</small>
-        </span>
       </a>
+      <div class="brand-text">
+        <strong>Sitio académico informativo</strong>
+        <span>Evaluación y rediseño de Recursos Educativos Digitales</span>
+      </div>
     </div>
 
-    <nav class="nav container" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
+    <button class="menu-icon" type="button" aria-expanded="false" aria-controls="main-nav">
+      Menú ☰
+    </button>
+
+    <nav class="nav" id="main-nav" aria-label="Navegación principal">
+      <a class="" href="index.html">Inicio</a>
 
       <div class="dropdown">
-        <a href="modelos-evaluacion-red.html">
-          Modelos de evaluación y RED <span aria-hidden="true">▾</span>
-        </a>
-        <div class="dropdown-content">
-          <a href="seleccionando-modelos.html">Seleccionando modelos</a>
-          <a href="recursos-educativos-digitales.html">Recursos educativos digitales</a>
+        <button class="dropdown-toggle " type="button"
+                aria-expanded="false" aria-haspopup="true"
+                title="Abrir Modelos de evaluación y RED">
+          Modelos de evaluación y RED ▾
+        </button>
+        <div class="dropdown-menu">
+          <a class="" href="seleccionando-modelos.html">Seleccionando modelos</a>
+          <a class="" href="recursos-educativos-digitales.html">Recursos educativos digitales</a>
         </div>
       </div>
 
-      <a class="active" href="rediseno.html" aria-current="page">Rediseño</a>
-      <a href="aplicacion-modelo.html">Aplicación de modelo de evaluación</a>
-      <a href="referencias.html">Referencias</a>
+      <a class="active" href="rediseno.html">Rediseño</a>
+      <a class="" href="aplicacion-modelo.html">Aplicación de modelo de evaluación</a>
+      <a class="" href="referencias.html">Referencias</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="page-title">
-      <div class="container">
-        <p class="breadcrumb">Rediseño</p>
-        <h1>Rediseño</h1>
-      </div>
-    </section>
+<main>
+  
 
-    <!-- Contenido del modelo MIREDEF -->
-    <section class="miredef-content">
-      <div class="container">
+<section class="page-title">
+  <div class="container">
+    <div class="breadcrumb">Rediseño</div>
+    <h1>Rediseño</h1>
+  </div>
+</section>
 
-        <section class="miredef-intro">
-          <div class="miredef-intro-text">
-            <h2>Modelo de Evaluación Replanteado</h2>
-            <h3>Nombre del modelo</h3>
-            <p class="miredef-model-name">
-              MIREDEF – Modelo Integral de Evaluación de Recursos Educativos Digitales para la Formación Deportiva
-            </p>
-          </div>
 
-          <img
-            class="miredef-image miredef-main-image"
-            src="assets/miredef-deportes.png"
-            alt="Estudiantes realizando actividades deportivas con apoyo de recursos digitales"
-            loading="lazy">
-        </section>
-
-        <section class="miredef-section">
-          <h2>Referentes</h2>
-          <p>
-            El modelo MIREDEF integra elementos específicos de tres referentes reconocidos para la evaluación de Recursos Educativos Digitales.
-          </p>
-
-          <div class="miredef-reference-grid">
-            <article class="miredef-card">
-              <h3>Norma UNE 71362</h3>
-              <p>
-                se adoptan los criterios de calidad didáctica, capacidad de adaptación al usuario, accesibilidad, robustez tecnológica, reutilización y adecuación del diseño visual, permitiendo valorar tanto la eficacia pedagógica como tecnológica del recurso educativo digital.
-              </p>
-            </article>
-
-            <article class="miredef-card">
-              <h3>COdA (Calidad de los Objetos de Aprendizaje)</h3>
-              <p>
-                se incorporan los criterios relacionados con objetivos y coherencia didáctica, calidad de los contenidos, capacidad de generar reflexión y pensamiento crítico, interactividad, motivación, usabilidad, accesibilidad, reusabilidad e interoperabilidad. Asimismo, se adopta la escala numérica de valoración de 1 a 5.
-              </p>
-            </article>
-
-            <article class="miredef-card">
-              <h3>LORI (Learning Object Review Instrument)</h3>
-              <p>
-                se retoman las dimensiones de calidad del contenido, alineación con objetivos de aprendizaje, retroalimentación y adaptación, motivación, diseño de presentación, usabilidad de interacción, accesibilidad, reusabilidad y cumplimiento de estándares. Igualmente se adopta la escala de valoración de cinco niveles.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="miredef-problem">
-          <div class="miredef-problem-text">
-            <h2>Problemática que motiva el rediseño</h2>
-            <p>
-              En el área de deportes del Colegio Siete de Agosto, los recursos educativos digitales suelen enfocarse en la demostración técnica de habilidades motrices o en la presentación audiovisual de contenidos deportivos, sin contar con mecanismos de evaluación orientados a determinar su impacto en los procesos de aprendizaje. Esta situación dificulta establecer si los recursos favorecen el desarrollo de competencias cognitivas, procedimentales y actitudinales propias de la educación física y la formación deportiva.
-            </p>
-            <p>
-              Desde una perspectiva pedagógica, se requiere un modelo que permita valorar no solo la calidad tecnológica del recurso, sino también su capacidad para promover el aprendizaje significativo, la autonomía del estudiante, la participación activa, la reflexión crítica y la aplicación práctica de los conocimientos en contextos deportivos reales. Por ello, el modelo MIREDEF busca integrar criterios de calidad pedagógica, didáctica y tecnológica ajustados al contexto institucional de la educación media.
-            </p>
-          </div>
-
-          <img
-            class="miredef-image miredef-problem-image"
-            src="assets/miredef-deportes.png"
-            alt="Actividad física escolar en un entorno educativo"
-            loading="lazy">
-        </section>
-
-        <section class="miredef-section">
-          <h2>Criterios de evaluación</h2>
-          <p>El MIREDEF articula los criterios de los tres referentes:</p>
-
-          <div class="miredef-criteria-grid">
-            <article class="miredef-card miredef-criterion">
-              <h3>Calidad pedagógica <span>(UNE, CODA, LORI)</span></h3>
-              <p>pertinencia de objetivos, coherencia con competencias deportivas, capacidad de generar aprendizaje significativo.</p>
-            </article>
-
-            <article class="miredef-card miredef-criterion">
-              <h3>Eficacia tecnológica <span>(UNE, CODA)</span></h3>
-              <p>usabilidad, interoperabilidad, estabilidad técnica.</p>
-            </article>
-
-            <article class="miredef-card miredef-criterion">
-              <h3>Accesibilidad y equidad <span>(UNE, LORI)</span></h3>
-              <p>navegación, operabilidad, inclusión de estudiantes con diversas condiciones.</p>
-            </article>
-
-            <article class="miredef-card miredef-criterion">
-              <h3>Motivación e interactividad <span>(CODA, LORI)</span></h3>
-              <p>capacidad de generar interés, participación activa y retroalimentación.</p>
-            </article>
-
-            <article class="miredef-card miredef-criterion">
-              <h3>Reusabilidad y estándares <span>(UNE, LORI)</span></h3>
-              <p>posibilidad de aplicar el recurso en distintos contextos y cumplimiento de normas internacionales.</p>
-            </article>
-
-            <article class="miredef-card miredef-criterion">
-              <h3>Didáctica <span>(UNE, CODA)</span></h3>
-              <p>secuenciación de contenidos, claridad de instrucciones, coherencia entre actividades y objetivos de aprendizaje.</p>
-            </article>
-
-            <article class="miredef-card miredef-criterion">
-              <h3>Estética y diseño visual <span>(UNE, LORI)</span></h3>
-              <p>organización gráfica, legibilidad, armonía visual y adecuada integración de recursos multimedia.</p>
-            </article>
-
-            <article class="miredef-card miredef-criterion">
-              <h3>Adaptabilidad del recurso <span>(UNE 71362)</span></h3>
-              <p>capacidad del RED para ajustarse a diferentes ritmos, necesidades y niveles de aprendizaje, favoreciendo experiencias educativas flexibles y personalizadas para los estudiantes.</p>
-            </article>
-
-            <article class="miredef-card miredef-criterion">
-              <h3>Retroalimentación formativa <span>(LORI)</span></h3>
-              <p>calidad, pertinencia e inmediatez de las respuestas proporcionadas al estudiante para orientar el aprendizaje, corregir dificultades y fortalecer el proceso de mejora continua.</p>
-            </article>
-          </div>
-        </section>
-
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>Universidad de Santander — UDES</p>
-      <p>Proyecto académico · Universidad de Santander — UDES</p>
+<!--
+<section class="section">
+  <div class="container">
+    
+    <div class="content-box">
+      <h3>Diagnóstico</h3>
+      <p>[Describa las necesidades, oportunidades de mejora y aspectos encontrados en el RED original.]</p>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <div class="content-box">
+      <h3>Propuesta de rediseño</h3>
+      <p>[Describa los cambios propuestos en contenidos, estructura, navegación, actividades, recursos multimedia y evaluación.]</p>
+    </div>
+
+    <div class="content-box">
+      <h3>Antes y después</h3>
+      <div class="cards">
+        <div class="placeholder">Captura / evidencia del recurso original</div>
+        <div class="placeholder">Captura / evidencia de la propuesta rediseñada</div>
+      </div>
+    </div>
+
+    <div class="content-box">
+      <h3>URL del recurso rediseñado</h3>
+      <p><a class="link-placeholder" href="#" data-url-placeholder>[Ingresar URL]</a></p>
+    </div>
+  </div>
+</section>
+
+-->
+
+</main>
+
+<footer class="footer"> 
+  <div class="footer-inner"> 
+    <small>Universidad de Santander — UDES</small> 
+    <small>Proyecto académico · Universidad de Santander — UDES</small> 
+  </div> 
+</footer> 
+
+<script src="script.js"></script>
 </body>
 </html>
