@@ -2388,3 +2388,298 @@ tr:last-child td {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   INSTRUMENTO DE EVALUACIÓN MIREDEF
+   Estilos adicionales; conserva el CSS base
+   ========================================== */
+
+.miredef-evaluacion {
+  width: 100%;
+  padding: 40px 0 60px;
+}
+
+.miredef-evaluacion .container {
+  width: min(100% - 40px, 1180px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.miredef-evaluacion .section-header {
+  text-align: center;
+  margin: 0 auto 28px;
+}
+
+.miredef-evaluacion .section-header h2 {
+  color: #174d2a;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.miredef-evaluacion .section-header h3,
+.miredef-evaluacion .content-box h3 {
+  color: #174d2a;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.miredef-evaluacion .miredef-subtitulo {
+  margin-top: 48px;
+  padding-top: 20px;
+}
+
+.miredef-evaluacion .content-box {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto 28px;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #d9e5dc;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(23, 77, 42, 0.045);
+}
+
+.miredef-evaluacion .miredef-introduccion p {
+  margin: 0 0 18px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.miredef-evaluacion .miredef-introduccion p:last-child {
+  margin-bottom: 0;
+}
+
+/* Tablas */
+
+.miredef-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0 auto;
+  border: 1px solid #d9e5dc;
+  border-radius: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.miredef-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  color: #26382d;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.miredef-table th,
+.miredef-table td {
+  padding: 14px 16px;
+  border: 1px solid #d9e5dc;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.miredef-table thead th {
+  background: #174d2a;
+  color: #ffffff;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.miredef-table tbody tr:nth-child(even) {
+  background: #f1f7f3;
+}
+
+.miredef-table tbody tr:hover {
+  background: #e7f1e9;
+}
+
+.miredef-table th:first-child,
+.miredef-table td:first-child {
+  width: 22%;
+}
+
+.miredef-table th:last-child,
+.miredef-table td:last-child {
+  width: 30%;
+}
+
+/* Rúbricas: columna de criterio más amplia */
+
+.miredef-rubrica {
+  table-layout: auto;
+}
+
+.miredef-rubrica th:first-child,
+.miredef-rubrica td:first-child {
+  width: 23%;
+  min-width: 180px;
+}
+
+.miredef-rubrica th:nth-child(2),
+.miredef-rubrica td:nth-child(2) {
+  width: auto;
+  min-width: 340px;
+}
+
+.miredef-rubrica th:last-child,
+.miredef-rubrica td:last-child {
+  width: 130px;
+  min-width: 130px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Resultado final */
+
+.miredef-tabla:last-of-type .miredef-table {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Presentación de Canva */
+
+.miredef-presentacion {
+  text-align: center;
+}
+
+.miredef-presentacion h3 {
+  text-align: center;
+}
+
+.miredef-canva {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f1f7f3;
+  border: 1px solid #d9e5dc;
+}
+
+.miredef-canva iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  border: 0;
+}
+
+/* Adaptación para tabletas */
+
+@media (max-width: 900px) {
+  .miredef-evaluacion {
+    padding: 28px 0 44px;
+  }
+
+  .miredef-evaluacion .container {
+    width: min(100% - 28px, 100%);
+  }
+
+  .miredef-evaluacion .content-box {
+    padding: 22px;
+  }
+
+  .miredef-table {
+    font-size: 15px;
+  }
+
+  .miredef-table th,
+  .miredef-table td {
+    padding: 12px;
+  }
+}
+
+/* Adaptación para celulares */
+
+@media (max-width: 600px) {
+  .miredef-evaluacion {
+    padding: 22px 0 35px;
+  }
+
+  .miredef-evaluacion .container {
+    width: calc(100% - 24px);
+  }
+
+  .miredef-evaluacion .section-header {
+    margin-bottom: 20px;
+  }
+
+  .miredef-evaluacion .section-header h2 {
+    font-size: clamp(25px, 7vw, 34px);
+    line-height: 1.2;
+  }
+
+  .miredef-evaluacion .section-header h3,
+  .miredef-evaluacion .content-box h3 {
+    font-size: 21px;
+  }
+
+  .miredef-evaluacion .content-box {
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 9px;
+  }
+
+  .miredef-evaluacion .miredef-introduccion p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* La tabla se desplaza horizontalmente sin romper el diseño */
+  .miredef-table-wrap {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .miredef-table {
+    min-width: 620px;
+    font-size: 14px;
+  }
+
+  .miredef-rubrica {
+    min-width: 760px;
+  }
+
+  .miredef-table th,
+  .miredef-table td {
+    padding: 10px;
+  }
+
+  .miredef-evaluacion .miredef-subtitulo {
+    margin-top: 30px;
+  }
+
+  .miredef-canva {
+    aspect-ratio: 4 / 3;
+    min-height: 260px;
+  }
+
+  .miredef-canva iframe {
+    min-height: 260px;
+  }
+}
+
+
+
+
+
+
+
