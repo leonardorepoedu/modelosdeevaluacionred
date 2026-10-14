@@ -1523,3 +1523,253 @@ tr:last-child td {
     padding: 12px 13px;
   }
 }
+
+
+
+/* =====================================================
+   MIREDEF: ESTILOS COMPLEMENTARIOS
+   Mantiene la hoja de estilos original del sitio UDES
+   ===================================================== */
+
+.miredef-intro,
+.miredef-problem-grid,
+.miredef-closing-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  align-items: center;
+  gap: 36px;
+}
+
+.miredef-intro-text h2 {
+  color: #174d2a;
+  font-size: clamp(36px, 4vw, 48px);
+  margin: 0 0 8px;
+}
+
+.miredef-intro-text h3 {
+  color: #2f7d45;
+  font-size: 23px;
+  margin: 0 0 18px;
+}
+
+.miredef-intro-text p,
+.miredef-problem-text p,
+.miredef-closing-grid p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
+
+.miredef-image {
+  margin: 0;
+  min-width: 0;
+}
+
+.miredef-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 7px 20px rgba(25, 60, 36, 0.12);
+}
+
+.miredef-image figcaption {
+  color: #526057;
+  font-size: 15px;
+  line-height: 1.5;
+  padding-top: 10px;
+}
+
+.miredef-soft-section {
+  background: #f2f8f4;
+}
+
+.miredef-reference-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.miredef-reference-card,
+.miredef-criterion {
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #d9e5dc;
+  border-radius: 9px;
+  padding: 24px;
+  box-shadow: 0 5px 15px rgba(25, 60, 36, 0.05);
+}
+
+.miredef-reference-card h3,
+.miredef-criterion h3 {
+  color: #174d2a;
+  font-size: 23px;
+  line-height: 1.3;
+  margin: 10px 0 12px;
+}
+
+.miredef-reference-card p,
+.miredef-criterion p {
+  color: #405348;
+  font-size: 17px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.miredef-number,
+.criterion-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #e4f1e7;
+  color: #174d2a;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.miredef-note {
+  margin-top: 30px;
+  padding: 22px 25px;
+  background: #ffffff;
+  border-left: 5px solid #2f7d45;
+  border-radius: 6px;
+}
+
+.miredef-note strong {
+  display: block;
+  color: #174d2a;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.miredef-note p {
+  font-size: 17px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.miredef-criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.criterion-source {
+  color: #24743d !important;
+  font-size: 15px !important;
+  font-weight: bold;
+  margin-bottom: 12px !important;
+}
+
+.miredef-sources {
+  background: #f7faf8;
+  border-top: 1px solid #d9e5dc;
+}
+
+.miredef-sources h2 {
+  color: #174d2a;
+  font-size: 29px;
+  margin-top: 0;
+}
+
+.miredef-sources ul {
+  padding-left: 24px;
+}
+
+.miredef-sources li {
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+.miredef-sources a {
+  color: #176b37;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+
+.miredef-image-note {
+  color: #526057;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* TABLET */
+@media (max-width: 950px) {
+  .miredef-intro,
+  .miredef-problem-grid,
+  .miredef-closing-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .miredef-reference-grid,
+  .miredef-criteria-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .miredef-reference-card,
+  .miredef-criterion {
+    padding: 20px;
+  }
+}
+
+/* MÓVIL */
+@media (max-width: 650px) {
+  .miredef-intro,
+  .miredef-problem-grid,
+  .miredef-closing-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .miredef-reference-grid,
+  .miredef-criteria-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .miredef-intro-text h2 {
+    font-size: 35px;
+  }
+
+  .miredef-intro-text h3,
+  .miredef-reference-card h3,
+  .miredef-criterion h3 {
+    font-size: 21px;
+  }
+
+  .miredef-intro-text p,
+  .miredef-problem-text p,
+  .miredef-closing-grid p,
+  .miredef-reference-card p,
+  .miredef-criterion p,
+  .miredef-note p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .miredef-image img {
+    max-height: 300px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .miredef-reference-card,
+  .miredef-criterion {
+    padding: 20px;
+  }
+
+  .miredef-note {
+    padding: 18px;
+  }
+
+  .miredef-sources h2 {
+    font-size: 26px;
+  }
+}
+
