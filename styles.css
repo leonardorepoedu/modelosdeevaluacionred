@@ -2683,3 +2683,57 @@ tr:last-child td {
 
 
 
+
+/* Botón de presentación Canva */
+
+.miredef-boton-presentacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 30px auto;
+}
+
+.btn-presentacion {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: #24764f;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #24764f;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(23, 77, 42, 0.15);
+    transition: background-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.btn-presentacion:hover {
+    background-color: #174d2a;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(23, 77, 42, 0.22);
+}
+
+.btn-presentacion:focus-visible {
+    outline: 3px solid #a7cbb3;
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    .miredef-boton-presentacion {
+        margin: 22px auto;
+    }
+
+    .btn-presentacion {
+        width: 100%;
+        max-width: 320px;
+        box-sizing: border-box;
+        padding: 13px 20px;
+        font-size: 16px;
+    }
+}
