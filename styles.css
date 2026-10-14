@@ -2207,3 +2207,184 @@ tr:last-child td {
 
 
 
+/* Complemento para la rúbrica completa MIREDEF */
+
+.miredef-instrument-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 50px;
+  box-sizing: border-box;
+}
+
+.miredef-instrument-page *,
+.miredef-instrument-page *::before,
+.miredef-instrument-page *::after {
+  box-sizing: border-box;
+}
+
+.miredef-instrument-page .mie-header,
+.miredef-instrument-page .mie-section,
+.miredef-instrument-page .mie-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.miredef-instrument-page .mie-section {
+  margin-bottom: 38px;
+}
+
+.miredef-instrument-page .mie-table {
+  width: 100%;
+  margin: 0;
+}
+
+.miredef-instrument-page .mie-dimension {
+  background: #e2eee6;
+  color: #174d3a;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.miredef-instrument-page .mie-rubric-table th:nth-child(1) {
+  width: 22%;
+}
+
+.miredef-instrument-page .mie-rubric-table th:nth-child(2) {
+  width: 58%;
+}
+
+.miredef-instrument-page .mie-rubric-table th:nth-child(3) {
+  width: 20%;
+}
+
+.miredef-instrument-page .mie-results-table th:first-child,
+.miredef-instrument-page .mie-results-table td:first-child {
+  width: 35%;
+}
+
+.miredef-instrument-page .mie-results-table tbody tr:nth-child(-n+2) td:last-child {
+  color: #174d3a;
+  font-weight: bold;
+}
+
+@media (max-width: 850px) {
+  .miredef-instrument-page {
+    padding: 26px 20px 40px;
+  }
+
+  .miredef-instrument-page .mie-rubric-table th:nth-child(1) {
+    width: 25%;
+  }
+
+  .miredef-instrument-page .mie-rubric-table th:nth-child(2) {
+    width: 50%;
+  }
+
+  .miredef-instrument-page .mie-rubric-table th:nth-child(3) {
+    width: 25%;
+  }
+}
+
+@media (max-width: 600px) {
+  .miredef-instrument-page {
+    padding: 22px 15px 32px;
+  }
+
+  .miredef-instrument-page .mie-table-wrapper {
+    overflow: visible;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .miredef-instrument-page .mie-table,
+  .miredef-instrument-page .mie-table tbody,
+  .miredef-instrument-page .mie-table tr,
+  .miredef-instrument-page .mie-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .miredef-instrument-page .mie-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .miredef-instrument-page .mie-table tbody tr {
+    margin-bottom: 16px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #d9e5dc;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(23, 77, 42, .05);
+  }
+
+  .miredef-instrument-page .mie-table tbody tr:nth-child(even) {
+    background: #fff;
+  }
+
+  .miredef-instrument-page .mie-table td {
+    width: 100%;
+    padding: 12px 14px;
+    border-bottom: 1px solid #e2ebe5;
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  .miredef-instrument-page .mie-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .miredef-instrument-page .mie-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 6px;
+    color: #205c43;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .miredef-instrument-page .mie-rubric-table td.mie-dimension {
+    background: #205c43;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  .miredef-instrument-page .mie-rubric-table td.mie-dimension::before {
+    display: none;
+  }
+
+  .miredef-instrument-page .mie-rating-options {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .miredef-instrument-page .mie-rating-options span {
+    width: 32px;
+    height: 32px;
+  }
+
+  .miredef-instrument-page .mie-results-table td:first-child {
+    font-weight: bold;
+    color: #174d3a;
+  }
+}
+
+
+
+
+
+
+
+
